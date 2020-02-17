@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="title">
+        <h3>Last {{ historyLength }} payments</h3>
+    </div>
+    <div class="scrollable">
+        <mat-card *ngFor="let payment of lastNOperations; trackBy: trackById">
+            <div class="cardBody">
+                <div>
+                    {{ payment.dateTime | date : 'yy/MM/dd HH:mm:ss' }}<br>
+                    {{ payment.amount }} {{ payment.asset.code }}
+                </div>
+                <div>
+                    <div>
+                        source:
+                        <a href="https://stellarscan.io/account/{{payment.sourceAccount.id}}"
+                           target="_blank">
+                            {{ payment.sourceAccount.id | slice:0:12 }}...
+                        </a>
+                    </div>
+                    <div>
+                        destination:
+                        <a href="https://stellarscan.io/account/{{payment.destination.id}}"
+                           target="_blank">
+                            {{ payment.destination.id | slice:0:12 }}...
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div>

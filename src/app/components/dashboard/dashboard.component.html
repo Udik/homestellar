@@ -1,0 +1,13 @@
+<div class="dashboard">
+    <div class="columns">
+        <div class="column transactions">
+            <app-recent-transactions [historyLength]="50"></app-recent-transactions>
+        </div>
+        <div class="column assets">
+            <app-recent-assets (assetSelected)="assetSelected($event)"></app-recent-assets>
+        </div>
+    </div>
+    <div class="dashboard-footer">
+        <app-inspect-asset [assetId$]="selectedAsset$"></app-inspect-asset>
+    </div>
+</div>

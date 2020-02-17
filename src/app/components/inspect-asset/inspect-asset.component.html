@@ -1,0 +1,46 @@
+<div class="container">
+   <div *ngIf="loading" class="spinner">
+      <mat-spinner [diameter]="32"></mat-spinner>
+   </div>
+   <div *ngIf="!loading && (asset$ | async) as asset; else message">
+      <mat-card>
+         <mat-card-title>Asset: {{ asset.code }}</mat-card-title>
+         <ul>
+            <li>
+               Holders count: {{ asset.holdersCount }}
+            </li>
+            <li>
+               Circulating supply: {{ asset.circulatingSupply | number }}
+            </li>
+            <li>
+               Total supply: {{ asset.totalSupply | number }}
+            </li>
+            <li>
+               <!-- Native lumens (XLM) have no issuer -->
+               <ul *ngIf="asset.issuer">
+                  <li>
+                     Issuer ID: 
+                     <a href="https://stellarscan.io/account/{{asset.issuer.id}}" target="_blank">
+                        {{ asset.issuer.id | slice:0:12 }}...
+                    </a>
+                  </li>
+                  <li>
+                     Reserved balance: {{ asset.issuer.reservedBalance | number }}
+                  </li>
+                  <li *ngIf="asset.issuer.homeDomain">
+                     Issuer home domain: <a [attr.href]="'//' + asset.issuer.homeDomain"
+                        target="_blank">
+                        {{ asset.issuer.homeDomain }}
+                     </a>
+                  </li>
+               </ul>
+            </li>
+         </ul>
+      </mat-card>
+   </div>
+   <ng-template #message>
+      <div *ngIf="!loading" class="message">
+         Click on a recently transacted asset card to view its details.
+      </div>
+   </ng-template>
+</div>

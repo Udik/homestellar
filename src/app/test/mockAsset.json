@@ -1,0 +1,14 @@
+{
+    "code": "TON",
+    "holdersCount": 164,
+    "circulatingSupply": "999999999.9714301",
+    "totalSupply": "999999999.9714301",
+    "issuer": {
+        "id": "GBFJGO46OV6E2QS2ZUMCF256ZL4BFOZWFHULRNLPSPW47HH5HFAKJTON",
+        "homeDomain": "ton.money",
+        "reservedBalance": "1.0000000",
+        "data": [],
+        "__typename": "Account"
+    },
+    "__typename": "Asset"
+}

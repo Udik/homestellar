@@ -1,0 +1,28 @@
+:host {
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+.scrollable {
+    overflow-y: auto;
+}
+
+mat-card {
+    margin-bottom: 4px;
+}
+
+.cardBody {
+    display: flex;
+    flex-direction: row;
+
+    &>div {
+        width: 50%;
+    }
+}

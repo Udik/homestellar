@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="title">
+        <h3>Transacted assets</h3>
+    </div>
+    <div class="scrollable">
+        <ul>
+            <li *ngFor="let assetItem of transactedAssets; trackBy: trackById">
+                <mat-card (click)="selectAsset(assetItem.asset)" class="assetCard">
+                    <mat-card-title>Asset code: {{ assetItem.asset.code }}</mat-card-title>
+                    <ul>
+                        <li>
+                            Transactions: {{ assetItem.numberOfTransactions }}
+                        </li>
+                        <li>
+                            Total amount: {{ assetItem.totalTransacted }}
+                        </li>
+                    </ul>
+                </mat-card>
+            </li>
+        </ul>
+    </div>
+</div>
