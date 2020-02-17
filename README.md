@@ -1,4 +1,4 @@
-# Homerun
+# Homestellar
 
 ## Description
 
@@ -16,7 +16,7 @@ The view is responsive.
 
 The app components are unit tested.
 
-### Issues: 
+### Some Issues: 
 
 The service errors out randomly, it seems to be a schema issue; I am not showing these errors in the UI but logging and suppressing them.
 
